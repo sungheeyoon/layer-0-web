@@ -1,6 +1,12 @@
 import { getAllProjects } from '@/lib/data/projects';
 import { ProjectGrid } from '@/components/organisms/ProjectGrid';
 import { Typography } from '@/components/atoms/Typography';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Project Archive',
+  description: 'A curated collection of digital products and brand architectures engineered by LAYER 0.',
+};
 
 export default function ProjectPage() {
     const projects = getAllProjects();

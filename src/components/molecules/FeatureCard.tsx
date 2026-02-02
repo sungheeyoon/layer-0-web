@@ -27,7 +27,7 @@ export const FeatureCard = ({ feature, isSelected, onToggle }: FeatureCardProps)
         >
             <div>
                 <div className="flex justify-between items-start mb-2">
-                    <Typography variant="h4" className={cn("text-lg", isSelected ? "text-signal-red" : "text-tech-black")}>
+                    <Typography variant="h3" className={cn("text-lg", isSelected ? "text-signal-red" : "text-tech-black")}>
                         {feature.name}
                     </Typography>
                     {feature.isPopular && (

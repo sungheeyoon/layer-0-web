@@ -13,9 +13,13 @@
 # testing
 /coverage
 
+# Playwright
+/playwright-report/
+/test-results/
+/test-results-snapshots/
+
 # next.js
-/.next/
-/out/
+.next/
 
 # production
 /build
