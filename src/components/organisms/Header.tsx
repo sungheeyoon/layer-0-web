@@ -58,29 +58,44 @@ export const Header = () => {
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        className="fixed inset-0 bg-off-white z-40 md:hidden flex flex-col pt-32 px-6"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="fixed inset-0 bg-off-white z-40 md:hidden flex flex-col px-6"
                     >
-                        <nav className="flex flex-col gap-8">
-                            {NAV_ITEMS.map((item) => (
-                                <Link
-                                    key={item.href}
-                                    href={item.href}
-                                    onClick={() => setIsOpen(false)}
-                                    className="text-4xl font-light text-tech-black hover:text-signal-red transition-colors tracking-tight"
-                                >
-                                    {item.label}
-                                </Link>
-                            ))}
-                        </nav>
-                        
-                        <div className="mt-auto pb-12">
-                            <p className="text-sm text-tech-black/40 font-mono">
-                                © 2026 LAYER 0<br/>
-                                ENGINEERING THE ESSENCE
-                            </p>
+                        {/* Menu Items Container */}
+                        <div className="flex flex-col pt-32 h-full">
+                            <nav className="flex flex-col gap-6">
+                                {NAV_ITEMS.map((item, index) => (
+                                    <motion.div
+                                        key={item.href}
+                                        initial={{ x: -20, opacity: 0 }}
+                                        animate={{ x: 0, opacity: 1 }}
+                                        transition={{ delay: 0.1 + index * 0.05 }}
+                                    >
+                                        <Link
+                                            href={item.href}
+                                            onClick={() => setIsOpen(false)}
+                                            className="text-5xl font-light text-tech-black hover:text-signal-red transition-colors tracking-tighter"
+                                        >
+                                            {item.label}
+                                        </Link>
+                                    </motion.div>
+                                ))}
+                            </nav>
+                            
+                            <motion.div 
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ delay: 0.4 }}
+                                className="mt-auto pb-12 pt-8 border-t border-tech-black/10"
+                            >
+                                <p className="text-xs text-tech-black/40 font-mono leading-relaxed">
+                                    LAYER 0 — THE ESSENTIAL BLUEPRINT<br/>
+                                    EST. 2026 / ENGINEERING THE ESSENCE
+                                </p>
+                            </motion.div>
                         </div>
                     </motion.div>
                 )}
