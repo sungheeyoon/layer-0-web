@@ -62,7 +62,7 @@ export const Header = () => {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.2 }}
-                        className="fixed inset-0 bg-[#F5F5F5] z-40 md:hidden flex flex-col px-6"
+                        className="fixed inset-0 bg-[#FF0000] z-40 md:hidden flex flex-col px-6"
                     >
                         {/* Menu Items Container */}
                         <div className="flex flex-col pt-32 h-full">
@@ -77,7 +77,7 @@ export const Header = () => {
                                         <Link
                                             href={item.href}
                                             onClick={() => setIsOpen(false)}
-                                            className="text-5xl font-light text-tech-black hover:text-signal-red transition-colors tracking-tighter"
+                                            className="text-5xl font-light text-white hover:text-tech-black transition-colors tracking-tighter"
                                         >
                                             {item.label}
                                         </Link>
@@ -89,9 +89,9 @@ export const Header = () => {
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ delay: 0.4 }}
-                                className="mt-auto pb-12 pt-8 border-t border-tech-black/10"
+                                className="mt-auto pb-12 pt-8 border-t border-white/20"
                             >
-                                <p className="text-xs text-tech-black/40 font-mono leading-relaxed">
+                                <p className="text-xs text-white/60 font-mono leading-relaxed">
                                     LAYER 0 — THE ESSENTIAL BLUEPRINT<br/>
                                     EST. 2026 / ENGINEERING THE ESSENCE
                                 </p>
