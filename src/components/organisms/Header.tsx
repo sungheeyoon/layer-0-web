@@ -20,7 +20,7 @@ export const Header = () => {
 
     return (
         <header className="fixed top-0 left-0 w-full z-50 bg-off-white/80 backdrop-blur-sm border-b border-tech-black/5">
-            <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between relative z-50">
+            <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between relative z-[70]">
                 <div className="flex items-center gap-4">
                     <Logo />
                     <span className="text-xl font-bold tracking-tight text-tech-black hidden md:block">
@@ -58,14 +58,13 @@ export const Header = () => {
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.2 }}
-                        className="fixed inset-0 bg-[#FF0000] z-40 md:hidden flex flex-col px-6"
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        className="fixed top-20 left-0 w-full bg-[#F5F5F5] z-40 md:hidden border-b border-tech-black/10 shadow-2xl overflow-hidden"
                     >
-                        {/* Menu Items Container */}
-                        <div className="flex flex-col pt-32 h-full">
+                        <div className="p-8">
                             <nav className="flex flex-col gap-6">
                                 {NAV_ITEMS.map((item, index) => (
                                     <motion.div
@@ -77,7 +76,7 @@ export const Header = () => {
                                         <Link
                                             href={item.href}
                                             onClick={() => setIsOpen(false)}
-                                            className="text-5xl font-light text-white hover:text-tech-black transition-colors tracking-tighter"
+                                            className="text-4xl font-light text-tech-black hover:text-signal-red transition-colors tracking-tighter"
                                         >
                                             {item.label}
                                         </Link>
@@ -89,9 +88,9 @@ export const Header = () => {
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ delay: 0.4 }}
-                                className="mt-auto pb-12 pt-8 border-t border-white/20"
+                                className="mt-8 pt-6 border-t border-tech-black/10"
                             >
-                                <p className="text-xs text-white/60 font-mono leading-relaxed">
+                                <p className="text-[10px] text-tech-black/40 font-mono leading-relaxed">
                                     LAYER 0 — THE ESSENTIAL BLUEPRINT<br/>
                                     EST. 2026 / ENGINEERING THE ESSENCE
                                 </p>
