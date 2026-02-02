@@ -62,7 +62,7 @@ export const Header = () => {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.2 }}
-                        className="fixed inset-0 bg-off-white z-40 md:hidden flex flex-col px-6"
+                        className="fixed inset-0 bg-[#F5F5F5] z-40 md:hidden flex flex-col px-6"
                     >
                         {/* Menu Items Container */}
                         <div className="flex flex-col pt-32 h-full">
