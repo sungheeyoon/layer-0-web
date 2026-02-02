@@ -2,9 +2,9 @@ import { Logo } from "@/components/atoms/Logo";
 import { Nav } from "@/components/molecules/Nav";
 
 const NAV_ITEMS = [
-    { label: 'Work', href: '/work' },
-    { label: 'Services', href: '/services' },
-    { label: 'Agency', href: '/agency' },
+    { label: 'About', href: '/about' },
+    { label: 'Project', href: '/project' },
+    { label: 'Planner', href: '/planner' },
     { label: 'Contact', href: '/contact' },
 ];
 

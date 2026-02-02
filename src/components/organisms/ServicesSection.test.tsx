@@ -1,13 +1,18 @@
 import { render, screen } from '@testing-library/react'
 import { describe, it, expect, vi } from 'vitest'
 import { ServicesSection } from './ServicesSection'
+import React from 'react'
+
+type MockDivProps = {
+    children: React.ReactNode;
+};
 
 // Mock Framer Motion
 vi.mock('framer-motion', () => ({
     motion: {
-        div: ({ children, ...props }: any) => <div {...props}>{children}</div>,
+        div: ({ children, ...props }: MockDivProps) => <div {...props}>{children}</div>,
     },
-    AnimatePresence: ({ children }: any) => <>{children}</>,
+    AnimatePresence: ({ children }: MockDivProps) => <>{children}</>,
 }))
 
 describe('ServicesSection', () => {

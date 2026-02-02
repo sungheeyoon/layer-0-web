@@ -13,10 +13,15 @@ vi.stubGlobal('IntersectionObserver', IntersectionObserverMock)
 
 import React from 'react';
 
+type MockLinkProps = {
+    children: React.ReactNode;
+    href: string;
+};
+
 vi.mock('next/link', () => {
     return {
         __esModule: true,
-        default: ({ children, href, ...props }: any) => {
+        default: ({ children, href, ...props }: MockLinkProps) => {
             return React.createElement('a', { href, ...props }, children)
         }
     }

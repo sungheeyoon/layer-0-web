@@ -3,7 +3,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Typography } from "@/components/atoms/Typography";
 import { cn } from "@/utils/cn";
-import { useState } from "react";
 
 interface ServiceCardProps {
     number: string;

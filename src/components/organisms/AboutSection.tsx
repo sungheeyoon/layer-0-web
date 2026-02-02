@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Typography } from "@/components/atoms/Typography";
-import { Grid } from "@/components/atoms/Grid";
 import { PhilosophyCard } from "@/components/molecules/PhilosophyCard";
 
 export const AboutSection = () => {

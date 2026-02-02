@@ -29,4 +29,16 @@ describe('Button', () => {
         fireEvent.click(button)
         expect(handleClick).toHaveBeenCalledTimes(1)
     })
+
+    it('renders as child component when asChild is true', () => {
+        render(
+            <Button asChild>
+                <a href="/test">Link Button</a>
+            </Button>
+        )
+        const link = screen.getByRole('link', { name: /link button/i })
+        expect(link).toBeDefined()
+        expect(link).toHaveAttribute('href', '/test')
+        expect(link.className).toContain('inline-flex') // Should inherit button styles
+    })
 })

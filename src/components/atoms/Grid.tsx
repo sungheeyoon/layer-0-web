@@ -1,7 +1,7 @@
 import React from 'react';
 import { cn } from '@/utils/cn';
 
-interface GridProps extends React.HTMLAttributes<HTMLDivElement> { }
+type GridProps = React.HTMLAttributes<HTMLDivElement>;
 
 export const Grid = ({ className, ...props }: GridProps) => {
     return (
